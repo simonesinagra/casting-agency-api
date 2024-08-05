@@ -2,7 +2,7 @@ import os
 import unittest
 import json
 
-from api import create_app
+from backend.app import create_app
 from settings import CASTING_ASSISTANT_TOKEN, CASTING_DIRECTOR_TOKEN, EXECUTIVE_PRODUCER_TOKEN
 
 class CastingAgencyTestCase(unittest.TestCase):
