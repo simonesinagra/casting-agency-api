@@ -216,8 +216,8 @@ The Casting Agency API uses Role-Based Access Control (RBAC) to manage access to
 The **Casting Assistant** is the most basic role with read-only access to the data.
 
 - **Permissions**:
-  - View details of actors.
-  - View details of movies.
+  - `get:actors`: View details of actors.
+  - `get:movies`: View details of movies
 
 - **Use Case**: This role is ideal for someone who needs to access information about actors and movies without the ability to modify or delete any data. For example, this could be an intern or a researcher who needs to review the existing records.
 
@@ -227,10 +227,10 @@ The **Casting Director** has broader permissions compared to the Casting Assista
 
 - **Permissions**:
   - Inherits all permissions of the **Casting Assistant** role.
-  - Add a new actor to the database.
-  - Delete an existing actor from the database.
-  - Modify details of existing actors (e.g., update name, age, gender).
-  - Modify details of existing movies (e.g., update title, release date).
+  - `post:actors`: Add a new actor to the database.
+  - `delete:actors`: Delete an existing actor from the database.
+  - `patch:actors`: Modify details of existing actors (e.g., update name, age, gender).
+  - `patch:movies`: Modify details of existing movies (e.g., update title, release date).
 
 - **Use Case**: This role is suitable for someone responsible for managing the actors and their assignments to different movies. For example, this could be a casting director or a member of the production team who needs to maintain the actor's records and update movie information.
 
@@ -240,8 +240,8 @@ The **Executive Producer** has the highest level of access and control over the 
 
 - **Permissions**:
   - Inherits all permissions of the **Casting Director** role.
-  - Add a new movie to the database.
-  - Delete an existing movie from the database.
+  - `post:movies`: Add a new movie to the database.
+  - `delete:movies`: Delete an existing movie from the database.
 
 - **Use Case**: This role is for someone who has full control over the production process and the authority to manage both actors and movies. Typically, this would be an executive producer or a senior manager within the organization who oversees the entire production process and has the final say on casting and movie creation.
 
