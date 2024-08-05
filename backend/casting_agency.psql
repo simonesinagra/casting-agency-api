@@ -21,7 +21,7 @@ SET default_tablespace = '';
 SET default_with_oids = false;
 
 --
--- Name: movies; Type: TABLE; Schema: public; Owner: simonesinagra
+-- Name: movies; Type: TABLE; Schema: public; Owner: casting_agency_oqwg_user
 --
 
 CREATE TABLE public.movies (
@@ -30,10 +30,10 @@ CREATE TABLE public.movies (
     release_date date NOT NULL
 );
 
-ALTER TABLE public.movies OWNER TO simonesinagra;
+ALTER TABLE public.movies OWNER TO casting_agency_oqwg_user;
 
 --
--- Name: actors; Type: TABLE; Schema: public; Owner: simonesinagra
+-- Name: actors; Type: TABLE; Schema: public; Owner: casting_agency_oqwg_user
 --
 
 CREATE TABLE public.actors (
@@ -43,10 +43,10 @@ CREATE TABLE public.actors (
     gender text NOT NULL
 );
 
-ALTER TABLE public.actors OWNER TO simonesinagra;
+ALTER TABLE public.actors OWNER TO casting_agency_oqwg_user;
 
 --
--- Name: movies_id_seq; Type: SEQUENCE; Schema: public; Owner: simonesinagra
+-- Name: movies_id_seq; Type: SEQUENCE; Schema: public; Owner: casting_agency_oqwg_user
 --
 
 CREATE SEQUENCE public.movies_id_seq
@@ -57,10 +57,10 @@ CREATE SEQUENCE public.movies_id_seq
     NO MAXVALUE
     CACHE 1;
 
-ALTER TABLE public.movies_id_seq OWNER TO simonesinagra;
+ALTER TABLE public.movies_id_seq OWNER TO casting_agency_oqwg_user;
 
 --
--- Name: actors_id_seq; Type: SEQUENCE; Schema: public; Owner: simonesinagra
+-- Name: actors_id_seq; Type: SEQUENCE; Schema: public; Owner: casting_agency_oqwg_user
 --
 
 CREATE SEQUENCE public.actors_id_seq
@@ -71,34 +71,34 @@ CREATE SEQUENCE public.actors_id_seq
     NO MAXVALUE
     CACHE 1;
 
-ALTER TABLE public.actors_id_seq OWNER TO simonesinagra;
+ALTER TABLE public.actors_id_seq OWNER TO casting_agency_oqwg_user;
 
 --
--- Name: movies_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: simonesinagra
+-- Name: movies_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: casting_agency_oqwg_user
 --
 
 ALTER SEQUENCE public.movies_id_seq OWNED BY public.movies.id;
 
 --
--- Name: actors_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: simonesinagra
+-- Name: actors_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: casting_agency_oqwg_user
 --
 
 ALTER SEQUENCE public.actors_id_seq OWNED BY public.actors.id;
 
 --
--- Name: movies id; Type: DEFAULT; Schema: public; Owner: simonesinagra
+-- Name: movies id; Type: DEFAULT; Schema: public; Owner: casting_agency_oqwg_user
 --
 
 ALTER TABLE ONLY public.movies ALTER COLUMN id SET DEFAULT nextval('public.movies_id_seq'::regclass);
 
 --
--- Name: actors id; Type: DEFAULT; Schema: public; Owner: simonesinagra
+-- Name: actors id; Type: DEFAULT; Schema: public; Owner: casting_agency_oqwg_user
 --
 
 ALTER TABLE ONLY public.actors ALTER COLUMN id SET DEFAULT nextval('public.actors_id_seq'::regclass);
 
 --
--- Data for Name: movies; Type: TABLE DATA; Schema: public; Owner: simonesinagra
+-- Data for Name: movies; Type: TABLE DATA; Schema: public; Owner: casting_agency_oqwg_user
 --
 
 COPY public.movies (id, title, release_date) FROM stdin;
@@ -109,7 +109,7 @@ COPY public.movies (id, title, release_date) FROM stdin;
 \.
 
 --
--- Data for Name: actors; Type: TABLE DATA; Schema: public; Owner: simonesinagra
+-- Data for Name: actors; Type: TABLE DATA; Schema: public; Owner: casting_agency_oqwg_user
 --
 
 COPY public.actors (id, name, age, gender) FROM stdin;
@@ -120,26 +120,26 @@ COPY public.actors (id, name, age, gender) FROM stdin;
 \.
 
 --
--- Name: movies_id_seq; Type: SEQUENCE SET; Schema: public; Owner: simonesinagra
+-- Name: movies_id_seq; Type: SEQUENCE SET; Schema: public; Owner: casting_agency_oqwg_user
 --
 
 SELECT pg_catalog.setval('public.movies_id_seq', 4, true);
 
 --
--- Name: actors_id_seq; Type: SEQUENCE SET; Schema: public; Owner: simonesinagra
+-- Name: actors_id_seq; Type: SEQUENCE SET; Schema: public; Owner: casting_agency_oqwg_user
 --
 
 SELECT pg_catalog.setval('public.actors_id_seq', 4, true);
 
 --
--- Name: movies_pkey; Type: CONSTRAINT; Schema: public; Owner: simonesinagra
+-- Name: movies_pkey; Type: CONSTRAINT; Schema: public; Owner: casting_agency_oqwg_user
 --
 
 ALTER TABLE ONLY public.movies
     ADD CONSTRAINT movies_pkey PRIMARY KEY (id);
 
 --
--- Name: actors_pkey; Type: CONSTRAINT; Schema: public; Owner: simonesinagra
+-- Name: actors_pkey; Type: CONSTRAINT; Schema: public; Owner: casting_agency_oqwg_user
 --
 
 ALTER TABLE ONLY public.actors
