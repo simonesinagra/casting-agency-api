@@ -57,7 +57,6 @@ def create_app(test_config=None):
             'actors': actors
         }), 200
 
-
     @app.route('/movies/<int:movie_id>', methods=['GET'])
     @requires_auth('get:movies')
     def get_movie(payload, movie_id):

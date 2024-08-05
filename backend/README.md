@@ -41,6 +41,9 @@ Create a .env file in the root directory and add the following variables:
 DB_NAME='casting_agency'
 DB_USER='postgres'
 
+AUTH0_DOMAIN = 'dev-nqpsvdwckdv2v7c8.us.auth0.com'
+API_AUDIENCE = 'casting-agency-dev'
+
 CASTING_ASSISTANT_TOKEN=your_casting_assistant_token_here
 CASTING_DIRECTOR_TOKEN=your_casting_director_token_here
 EXECUTIVE_PRODUCER_TOKEN=your_executive_producer_token_here

@@ -1,12 +1,10 @@
 import json
-from flask import request, abort
+from flask import request
 from functools import wraps
 from jose import jwt
 from urllib.request import urlopen
 
-AUTH0_DOMAIN = 'dev-nqpsvdwckdv2v7c8.us.auth0.com'
-ALGORITHMS = ['RS256']
-API_AUDIENCE = 'casting-agency-dev'
+from settings import AUTH0_DOMAIN, API_AUDIENCE
 
 ## AuthError Exception
 '''
@@ -94,7 +92,7 @@ def verify_decode_jwt(token):
             payload = jwt.decode(
                 token,
                 rsa_key,
-                algorithms=ALGORITHMS,
+                algorithms=['RS256'],
                 audience=API_AUDIENCE,
                 issuer='https://' + AUTH0_DOMAIN + '/',
             )
